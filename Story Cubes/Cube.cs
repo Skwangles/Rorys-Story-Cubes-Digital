@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Story_Cubes
 {
     class Cube
     {
-        public Cube(object img1, object img2, object img3, object img4, object img5, object img6)
+        public Cube(Bitmap img1, Bitmap img2, Bitmap img3, Bitmap img4, Bitmap img5, Bitmap img6)
         {
 
             this.ImagePaths[0] = img1;
@@ -17,14 +20,14 @@ namespace Story_Cubes
             this.ImagePaths[3] = img4;
             this.ImagePaths[4] = img5;
             this.ImagePaths[5] = img6;
-
+            
 
         }
 
 
-        private object[] ImagePaths = new object[6];
+        private Bitmap[] ImagePaths = new Bitmap[6];
 
-        public object RandomPic()
+        public Bitmap RandomPic()
         {
             return ImagePaths[RandomNumber(0, 6)];
         }

@@ -97,14 +97,7 @@
                 </LinearGradientBrush>
             </Image.OpacityMask>
         </Image>
-        <Image x:Name="pb1" HorizontalAlignment="Left" Height="69" Margin="25,92,0,0" VerticalAlignment="Top" Width="65">
-            <Image.OpacityMask>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0.987"/>
-                    <GradientStop Color="#000C6400" Offset="1"/>
-                </LinearGradientBrush>
-            </Image.OpacityMask>
-        </Image>
+        <Image x:Name="pb1" HorizontalAlignment="Left" Height="69" Margin="25,92,0,0" VerticalAlignment="Top" Width="65" Source="C1S1.jpg"/>
         <ComboBox x:Name="Box9" HorizontalAlignment="Left" Margin="409,52,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged" RenderTransformOrigin="0.481,0.485">
             <System:String>1</System:String>
             <System:String>2</System:String>
