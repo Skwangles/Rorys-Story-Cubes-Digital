@@ -33,10 +33,7 @@ namespace Story_Cubes
 
         }
         ComboBox[] ComboBoxes;
-        Uri[] img = new Uri[]
-        {
-            new Uri(()Properties.Resources.C1S1),
-        }
+        
 
 
 
@@ -107,33 +104,18 @@ namespace Story_Cubes
         }
 
         
-        private void CreateCubes(string prefix, int number)
+        private void CreateCubes()
         {
 
-            BitmapImage[] tempImage = new BitmapImage[6];
-            ResourceSet resourceSet = Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-            int counter = 0;
-            foreach (DictionaryEntry entry in resourceSet)
-            {
-
-                string resourceKey = entry.Key.ToString();
-                var resource = entry.Value;
-                if (resourceKey.Contains(prefix))//Uses prefix to find which photo to put for this cube
-                {
-                    tempImage[counter] = (Bitmap)entry.Value;
-                    counter++;
-                }
-
-            }
             Cubes[0] = new Cube(Properties.Resources.C1S1, Properties.Resources.C1S2, Properties.Resources.C1S3, Properties.Resources.C1S4, Properties.Resources.C1S5, Properties.Resources.C1S6);
-            Cubes[1] = new Cube(Properties.Resources.C2S1, Properties.Resources.C2, Properties.Resources.C1S3, Properties.Resources.C1S4, Properties.Resources.C1S5, Properties.Resources.C1S6);
-            Cubes[2] = new Cube(Properties.Resources.C3S1, Properties.Resources.C3S2, Properties.Resources.C1S3, Properties.Resources.C1S4, Properties.Resources.C1S5, Properties.Resources.C1S6);
-            Cubes[3] = new Cube(Properties.Resources.C4S1, Properties.Resources.C4S2, Properties.Resources.C1S3, Properties.Resources.C1S4, Properties.Resources.C1S5, Properties.Resources.C1S6);
-            Cubes[4] = new Cube(Properties.Resources.C5S1, Properties.Resources.C5S2, Properties.Resources.C1S3, Properties.Resources.C1S4, Properties.Resources.C1S5, Properties.Resources.C1S6);
-            Cubes[5] = new Cube(Properties.Resources.C6S1, Properties.Resources.C6S2, Properties.Resources.C1S3, Properties.Resources.C1S4, Properties.Resources.C1S5, Properties.Resources.C1S6);
-            Cubes[6] = new Cube(Properties.Resources.C7S1, Properties.Resources.C7S2, Properties.Resources.C1S3, Properties.Resources.C1S4, Properties.Resources.C1S5, Properties.Resources.C1S6);
-            Cubes[7] = new Cube(Properties.Resources.C8S1, Properties.Resources.C8S2, Properties.Resources.C1S3, Properties.Resources.C1S4, Properties.Resources.C1S5, Properties.Resources.C1S6);
-            Cubes[8] = new Cube(Properties.Resources.C9S1, Properties.Resources.C9S2, Properties.Resources.C1S3, Properties.Resources.C1S4, Properties.Resources.C1S5, Properties.Resources.C1S6);
+            Cubes[1] = new Cube(Properties.Resources.C2S1, Properties.Resources.C2S1_1_, Properties.Resources.C2S3, Properties.Resources.C2S4, Properties.Resources.C2S5, Properties.Resources.C2S6);
+            Cubes[2] = new Cube(Properties.Resources.C3S1, Properties.Resources.C3S2, Properties.Resources.C3S3, Properties.Resources.C3S4, Properties.Resources.C3S5, Properties.Resources.C3S6);
+            Cubes[3] = new Cube(Properties.Resources.C4S1, Properties.Resources.C4S2, Properties.Resources.C4S3, Properties.Resources.C4S4, Properties.Resources.C4S5, Properties.Resources.C4S6);
+            Cubes[4] = new Cube(Properties.Resources.C5S1, Properties.Resources.C5S2, Properties.Resources.C5S3, Properties.Resources.C5S4, Properties.Resources.C5S5, Properties.Resources.C5S6);
+            Cubes[5] = new Cube(Properties.Resources.C6S1, Properties.Resources.C6S2, Properties.Resources.C6S3, Properties.Resources.C6S4, Properties.Resources.C6S5, Properties.Resources.C6S6);
+            Cubes[6] = new Cube(Properties.Resources.C7S1, Properties.Resources.C7S2, Properties.Resources.C7S3, Properties.Resources.C7S4, Properties.Resources.C7S5, Properties.Resources.C7S6);
+            Cubes[7] = new Cube(Properties.Resources.C8S1, Properties.Resources.C8S2, Properties.Resources.C8S3, Properties.Resources.C8S4, Properties.Resources.C8S5, Properties.Resources.C8S6);
+            Cubes[8] = new Cube(Properties.Resources.C9S1, Properties.Resources.C9S2, Properties.Resources.C9S3, Properties.Resources.C9S4, Properties.Resources.C9S5, Properties.Resources.C9S6);
             //Cubes[number] = new Cube();
         }
         
@@ -142,16 +124,9 @@ namespace Story_Cubes
         {
             
             ComboBoxes = new ComboBox[] { this.Box1, this.Box2, this.Box3, this.Box4, this.Box5, this.Box6, this.Box7, this.Box8, this.Box9 };
-            ImageBox = new Image[] { this.pb1, this.pb2, this.pb3, this.pb4, this.pb5, this.pb6, this.pb7, this.pb8, this.pb9 };
-            CreateCubes("C1", 0);
-            CreateCubes("C2", 1);
-            CreateCubes("C3", 2);
-            CreateCubes("C4", 3);
-            CreateCubes("C5", 4);
-            CreateCubes("C6", 5);
-            CreateCubes("C7", 6);
-            CreateCubes("C8", 7);
-            CreateCubes("C9", 8);
+            ImageBox = new System.Windows.Controls.Image[] { this.pb1, this.pb2, this.pb3, this.pb4, this.pb5, this.pb6, this.pb7, this.pb8, this.pb9 };
+            CreateCubes();
+            
         }
         #region Boxs
         private void Box3_SelectionChanged(object sender, SelectionChangedEventArgs e)
