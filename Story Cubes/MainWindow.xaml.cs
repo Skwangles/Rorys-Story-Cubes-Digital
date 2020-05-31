@@ -29,6 +29,7 @@ namespace Story_Cubes
         Cube[] Cubes = new Cube[9];
         Bitmap[] DisplayImg = new Bitmap[9];
         System.Windows.Controls.Image[] ImageBox;
+        Random rand = new Random();
         public MainWindow()
         {
             InitializeComponent();
@@ -107,8 +108,8 @@ namespace Story_Cubes
 
                 for (int i = 0; i <= AmountOfCubesInUse; i++)
                 {
-                    Console.WriteLine(ComboBoxes[i].SelectedItem);
-                    DisplayImg[i] = Cubes[int.Parse(ComboBoxes[i].SelectedItem.ToString())].RandomPic();
+                    
+                    DisplayImg[i] = Cubes[int.Parse(ComboBoxes[i].SelectedItem.ToString())-1].RandomPic();
                 }
                 int counter = 0;
                 foreach (Bitmap obj in DisplayImg)
@@ -196,5 +197,24 @@ namespace Story_Cubes
 
         }
         #endregion
+
+        private void RandomizeMe_Click(object sender, RoutedEventArgs e)
+        {
+            
+            foreach(ComboBox combo in ComboBoxes)
+            {
+                combo.SelectedIndex = rand.Next(0,9);
+            }
+        }
+
+        private void Defaults_Click(object sender, RoutedEventArgs e)
+        {
+            int counter = 0;
+            foreach(ComboBox combo in ComboBoxes)
+            {
+                combo.SelectedIndex = counter;
+                counter++;
+            }
+        }
     }
 }

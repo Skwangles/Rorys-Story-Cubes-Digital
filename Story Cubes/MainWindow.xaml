@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:Story_Cubes"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Story_Cubes.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="498.667" ResizeMode="NoResize" Loaded="Window_Loaded">
+        Title="StoryCubes - Actions" Height="450" Width="498.667" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid Margin="0,0,4,0">
-        <ComboBox x:Name="Box1" HorizontalAlignment="Left" Margin="25,52,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged">
+        <ComboBox x:Name="Box1" HorizontalAlignment="Left" Margin="47,53,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged" SelectedIndex="0">
             <System:String>1</System:String>
             <System:String>2</System:String>
             <System:String>3</System:String>
@@ -19,21 +19,21 @@
             <System:String>8</System:String>
             <System:String>9</System:String>
         </ComboBox>
-        <Button Content="Roll" HorizontalAlignment="Left" Margin="200,356,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Label HorizontalAlignment="Left" Margin="23,0,0,0" VerticalAlignment="Top"/>
-        <Label Content="1" HorizontalAlignment="Left" Margin="35,26,0,0" VerticalAlignment="Top"/>
-        <Label Content="2" HorizontalAlignment="Left" Margin="86,26,0,0" VerticalAlignment="Top"/>
-        <Label Content="3" HorizontalAlignment="Left" Margin="134,26,0,0" VerticalAlignment="Top"/>
-        <Label Content="4" HorizontalAlignment="Left" Margin="184,26,0,0" VerticalAlignment="Top"/>
-        <Label Content="5" HorizontalAlignment="Left" Margin="230,26,0,0" VerticalAlignment="Top"/>
-        <Label Content="6" HorizontalAlignment="Left" Margin="277,26,0,0" VerticalAlignment="Top"/>
-        <Label Content="7" HorizontalAlignment="Left" Margin="328,26,0,0" VerticalAlignment="Top"/>
-        <Label Content="8" HorizontalAlignment="Left" Margin="377,26,0,0" VerticalAlignment="Top"/>
-        <Label Content="9" HorizontalAlignment="Left" Margin="422,26,0,0" VerticalAlignment="Top"/>
-        <Label Content="Enter what cubes go in which slot" HorizontalAlignment="Left" Margin="146,2,0,0" VerticalAlignment="Top"/>
-        <Button Content="Randomize" HorizontalAlignment="Left" Margin="338,5,0,0" VerticalAlignment="Top" Width="125"/>
+        <Button Content="Roll" HorizontalAlignment="Left" Margin="207,355,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Label HorizontalAlignment="Left" Margin="-3,27,0,0" VerticalAlignment="Top" Content="Slot Number" FontSize="8"/>
+        <Label Content="1" HorizontalAlignment="Left" Margin="57,27,0,0" VerticalAlignment="Top"/>
+        <Label Content="2" HorizontalAlignment="Left" Margin="108,27,0,0" VerticalAlignment="Top"/>
+        <Label Content="3" HorizontalAlignment="Left" Margin="156,27,0,0" VerticalAlignment="Top"/>
+        <Label Content="4" HorizontalAlignment="Left" Margin="206,27,0,0" VerticalAlignment="Top"/>
+        <Label Content="5" HorizontalAlignment="Left" Margin="252,27,0,0" VerticalAlignment="Top"/>
+        <Label Content="6" HorizontalAlignment="Left" Margin="299,27,0,0" VerticalAlignment="Top"/>
+        <Label Content="7" HorizontalAlignment="Left" Margin="350,27,0,0" VerticalAlignment="Top"/>
+        <Label Content="8" HorizontalAlignment="Left" Margin="399,27,0,0" VerticalAlignment="Top"/>
+        <Label Content="9" HorizontalAlignment="Left" Margin="444,27,0,0" VerticalAlignment="Top"/>
+        <Label Content="Select Which Cubes To Use" HorizontalAlignment="Left" Margin="172,1,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="RandomizeMe" Content="Randomize Cubes" HorizontalAlignment="Left" Margin="338,5,0,0" VerticalAlignment="Top" Width="125" Click="RandomizeMe_Click"/>
         <Label Content="Random picture from selected cubes" HorizontalAlignment="Left" Margin="146,385,0,0" VerticalAlignment="Top"/>
-        <Image x:Name="pb9" HorizontalAlignment="Left" Height="69" Margin="165,166,0,0" VerticalAlignment="Top" Width="65">
+        <Image x:Name="pb9" HorizontalAlignment="Left" Height="69" Margin="287,166,0,0" VerticalAlignment="Top" Width="65">
             <Image.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0.987"/>
@@ -41,7 +41,7 @@
                 </LinearGradientBrush>
             </Image.OpacityMask>
         </Image>
-        <Image x:Name="pb8" HorizontalAlignment="Left" Height="69" Margin="95,166,0,0" VerticalAlignment="Top" Width="65">
+        <Image x:Name="pb8" HorizontalAlignment="Left" Height="69" Margin="217,166,0,0" VerticalAlignment="Top" Width="65">
             <Image.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0.987"/>
@@ -49,7 +49,7 @@
                 </LinearGradientBrush>
             </Image.OpacityMask>
         </Image>
-        <Image x:Name="pb7" HorizontalAlignment="Left" Height="69" Margin="25,166,0,0" VerticalAlignment="Top" Width="65">
+        <Image x:Name="pb7" HorizontalAlignment="Left" Height="69" Margin="147,166,0,0" VerticalAlignment="Top" Width="65">
             <Image.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0.987"/>
@@ -97,8 +97,8 @@
                 </LinearGradientBrush>
             </Image.OpacityMask>
         </Image>
-        <Image x:Name="pb1" HorizontalAlignment="Left" Height="69" Margin="25,92,0,0" VerticalAlignment="Top" Width="65" Source="C1S1.jpg"/>
-        <ComboBox x:Name="Box9" HorizontalAlignment="Left" Margin="409,52,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged" RenderTransformOrigin="0.481,0.485">
+        <Image x:Name="pb1" HorizontalAlignment="Left" Height="69" Margin="25,92,0,0" VerticalAlignment="Top" Width="65"/>
+        <ComboBox x:Name="Box9" HorizontalAlignment="Left" Margin="431,53,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged" RenderTransformOrigin="0.481,0.485" SelectedIndex="8">
             <System:String>1</System:String>
             <System:String>2</System:String>
             <System:String>3</System:String>
@@ -109,7 +109,7 @@
             <System:String>8</System:String>
             <System:String>9</System:String>
         </ComboBox>
-        <ComboBox x:Name="Box8" HorizontalAlignment="Left" Margin="361,52,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged">
+        <ComboBox x:Name="Box8" HorizontalAlignment="Left" Margin="383,53,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged" SelectedIndex="7">
             <System:String>1</System:String>
             <System:String>2</System:String>
             <System:String>3</System:String>
@@ -120,7 +120,7 @@
             <System:String>8</System:String>
             <System:String>9</System:String>
         </ComboBox>
-        <ComboBox x:Name="Box7" HorizontalAlignment="Left" Margin="313,52,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged" RenderTransformOrigin="0.481,0.485">
+        <ComboBox x:Name="Box7" HorizontalAlignment="Left" Margin="335,53,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged" RenderTransformOrigin="0.481,0.485" SelectedIndex="6">
             <System:String>1</System:String>
             <System:String>2</System:String>
             <System:String>3</System:String>
@@ -131,7 +131,7 @@
             <System:String>8</System:String>
             <System:String>9</System:String>
         </ComboBox>
-        <ComboBox x:Name="Box6" HorizontalAlignment="Left" Margin="265,52,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged">
+        <ComboBox x:Name="Box6" HorizontalAlignment="Left" Margin="287,53,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged" SelectedIndex="5">
             <System:String>1</System:String>
             <System:String>2</System:String>
             <System:String>3</System:String>
@@ -142,7 +142,7 @@
             <System:String>8</System:String>
             <System:String>9</System:String>
         </ComboBox>
-        <ComboBox x:Name="Box5" HorizontalAlignment="Left" Margin="217,52,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged" RenderTransformOrigin="4.682,0.545">
+        <ComboBox x:Name="Box5" HorizontalAlignment="Left" Margin="239,53,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged" RenderTransformOrigin="4.682,0.545" SelectedIndex="4">
             <System:String>1</System:String>
             <System:String>2</System:String>
             <System:String>3</System:String>
@@ -153,7 +153,7 @@
             <System:String>8</System:String>
             <System:String>9</System:String>
         </ComboBox>
-        <ComboBox x:Name="Box4" HorizontalAlignment="Left" Margin="169,52,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged">
+        <ComboBox x:Name="Box4" HorizontalAlignment="Left" Margin="191,53,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged" SelectedIndex="3">
             <System:String>1</System:String>
             <System:String>2</System:String>
             <System:String>3</System:String>
@@ -164,7 +164,7 @@
             <System:String>8</System:String>
             <System:String>9</System:String>
         </ComboBox>
-        <ComboBox x:Name="Box3" HorizontalAlignment="Left" Margin="121,52,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged">
+        <ComboBox x:Name="Box3" HorizontalAlignment="Left" Margin="143,53,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged" SelectedIndex="2">
             <System:String>1</System:String>
             <System:String>2</System:String>
             <System:String>3</System:String>
@@ -175,7 +175,7 @@
             <System:String>8</System:String>
             <System:String>9</System:String>
         </ComboBox>
-        <ComboBox x:Name="Box2" HorizontalAlignment="Left" Margin="73,52,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged" RenderTransformOrigin="1.395,0.455">
+        <ComboBox x:Name="Box2" HorizontalAlignment="Left" Margin="95,53,0,0" VerticalAlignment="Top" Width="43" SelectionChanged="Box1_SelectionChanged" RenderTransformOrigin="1.395,0.455" SelectedIndex="1">
             <System:String>1</System:String>
             <System:String>2</System:String>
             <System:String>3</System:String>
@@ -186,5 +186,8 @@
             <System:String>8</System:String>
             <System:String>9</System:String>
         </ComboBox>
+        <Label HorizontalAlignment="Left" Margin="0,53,0,0" VerticalAlignment="Top" Content="Cube Num" FontSize="8" Width="52"/>
+        <Label HorizontalAlignment="Left" Margin="428,394,0,0" VerticalAlignment="Top" Content="Developed by Kiwi" FontSize="5" RenderTransformOrigin="0.922,0.471"/>
+        <Button x:Name="Defaults" Content="Set to Defaults" HorizontalAlignment="Left" Margin="72,5,0,0" VerticalAlignment="Top" Width="82" Click="Defaults_Click"/>
     </Grid>
 </Window>
