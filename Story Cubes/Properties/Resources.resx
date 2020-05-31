@@ -139,8 +139,8 @@
   <data name="C2S1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\C2S1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="C2S1_1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\C2S1(1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="C2S2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\C2S2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="C2S3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\C2S3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Resources;
 using System.Text;
@@ -26,14 +27,15 @@ namespace Story_Cubes
     public partial class MainWindow : Window
     {
         Cube[] Cubes = new Cube[9];
-        BitmapImage[] DisplayImg = new BitmapImage[9];
+        Bitmap[] DisplayImg = new Bitmap[9];
+        System.Windows.Controls.Image[] ImageBox;
         public MainWindow()
         {
             InitializeComponent();
 
         }
         ComboBox[] ComboBoxes;
-        
+
 
 
 
@@ -49,7 +51,7 @@ namespace Story_Cubes
         private bool IsCorrectSelections()
         {
             bool temp = false;
-            for (int AmountComboBox = ComboBoxes.Length-1; AmountComboBox > 0; AmountComboBox -= 1)
+            for (int AmountComboBox = ComboBoxes.Length - 1; AmountComboBox > 0; AmountComboBox -= 1)
             {
                 if (AmountComboBox == ComboBoxes.Length)
                 {
@@ -68,6 +70,27 @@ namespace Story_Cubes
 
             return true;
         }
+
+
+        /// <summary>
+        /// Takes a bitmap and converts it to an image that can be handled by WPF ImageBrush
+        /// </summary>
+        /// <param name="src">A bitmap image</param>
+        /// <returns>The image as a BitmapImage for WPF</returns>
+        public BitmapImage Convert(Bitmap src)
+        {
+            MemoryStream ms = new MemoryStream();
+            ((System.Drawing.Bitmap)src).Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+            BitmapImage image = new BitmapImage();
+            image.BeginInit();
+            ms.Seek(0, SeekOrigin.Begin);
+            image.StreamSource = ms;
+            image.EndInit();
+            return image;
+        }
+
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (IsCorrectSelections())
@@ -85,12 +108,16 @@ namespace Story_Cubes
                 for (int i = 0; i <= AmountOfCubesInUse; i++)
                 {
                     Console.WriteLine(ComboBoxes[i].SelectedItem);
-                   DisplayImg[i] = Cubes[int.Parse(ComboBoxes[i].SelectedItem.ToString())].RandomPic();
+                    DisplayImg[i] = Cubes[int.Parse(ComboBoxes[i].SelectedItem.ToString())].RandomPic();
                 }
                 int counter = 0;
-                foreach(BitmapImage obj in DisplayImg)
+                foreach (Bitmap obj in DisplayImg)
                 {
-                    ImageBox[counter].Source = obj;
+                    if (obj != null)
+                    {
+                        ImageBox[counter].Source = Convert(obj);
+                        counter++;
+                    }
                 }
 
 
@@ -103,12 +130,12 @@ namespace Story_Cubes
             }
         }
 
-        
+
         private void CreateCubes()
         {
 
             Cubes[0] = new Cube(Properties.Resources.C1S1, Properties.Resources.C1S2, Properties.Resources.C1S3, Properties.Resources.C1S4, Properties.Resources.C1S5, Properties.Resources.C1S6);
-            Cubes[1] = new Cube(Properties.Resources.C2S1, Properties.Resources.C2S1_1_, Properties.Resources.C2S3, Properties.Resources.C2S4, Properties.Resources.C2S5, Properties.Resources.C2S6);
+            Cubes[1] = new Cube(Properties.Resources.C2S1, Properties.Resources.C2S2, Properties.Resources.C2S3, Properties.Resources.C2S4, Properties.Resources.C2S5, Properties.Resources.C2S6);
             Cubes[2] = new Cube(Properties.Resources.C3S1, Properties.Resources.C3S2, Properties.Resources.C3S3, Properties.Resources.C3S4, Properties.Resources.C3S5, Properties.Resources.C3S6);
             Cubes[3] = new Cube(Properties.Resources.C4S1, Properties.Resources.C4S2, Properties.Resources.C4S3, Properties.Resources.C4S4, Properties.Resources.C4S5, Properties.Resources.C4S6);
             Cubes[4] = new Cube(Properties.Resources.C5S1, Properties.Resources.C5S2, Properties.Resources.C5S3, Properties.Resources.C5S4, Properties.Resources.C5S5, Properties.Resources.C5S6);
@@ -118,15 +145,15 @@ namespace Story_Cubes
             Cubes[8] = new Cube(Properties.Resources.C9S1, Properties.Resources.C9S2, Properties.Resources.C9S3, Properties.Resources.C9S4, Properties.Resources.C9S5, Properties.Resources.C9S6);
             //Cubes[number] = new Cube();
         }
-        
+
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
+
             ComboBoxes = new ComboBox[] { this.Box1, this.Box2, this.Box3, this.Box4, this.Box5, this.Box6, this.Box7, this.Box8, this.Box9 };
             ImageBox = new System.Windows.Controls.Image[] { this.pb1, this.pb2, this.pb3, this.pb4, this.pb5, this.pb6, this.pb7, this.pb8, this.pb9 };
             CreateCubes();
-            
+
         }
         #region Boxs
         private void Box3_SelectionChanged(object sender, SelectionChangedEventArgs e)

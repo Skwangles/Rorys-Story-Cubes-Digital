@@ -11,6 +11,7 @@ namespace Story_Cubes
 {
     class Cube
     {
+        Random random = new Random();
         public Cube(Bitmap img1, Bitmap img2, Bitmap img3, Bitmap img4, Bitmap img5, Bitmap img6)
         {
 
@@ -20,7 +21,7 @@ namespace Story_Cubes
             this.ImagePaths[3] = img4;
             this.ImagePaths[4] = img5;
             this.ImagePaths[5] = img6;
-            
+
 
         }
 
@@ -29,14 +30,10 @@ namespace Story_Cubes
 
         public Bitmap RandomPic()
         {
-            return ImagePaths[RandomNumber(0, 6)];
+            return ImagePaths[random.Next(0, 6)];
         }
 
-        private int RandomNumber(int min, int max)
-        {
-            Random random = new Random();
-            return random.Next(min, max);
-        }
+
 
 
 

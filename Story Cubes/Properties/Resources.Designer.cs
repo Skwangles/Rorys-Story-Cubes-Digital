@@ -133,9 +133,9 @@ namespace Story_Cubes.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap C2S1_1_ {
+        internal static System.Drawing.Bitmap C2S2 {
             get {
-                object obj = ResourceManager.GetObject("C2S1_1_", resourceCulture);
+                object obj = ResourceManager.GetObject("C2S2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
