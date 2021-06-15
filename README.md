@@ -8,5 +8,6 @@ To Play: Select the cubes you'd like to use(Or randomize them) and then click Ro
 The randomized images depending to the Die will show up.
 Now you can create a story using the images shown of the actions. 
 
+Good fun for kids.
 
 Enjoy!
