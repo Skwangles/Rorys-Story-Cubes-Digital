@@ -14,15 +14,12 @@ namespace Story_Cubes
         Random random = new Random();
         public Cube(Bitmap img1, Bitmap img2, Bitmap img3, Bitmap img4, Bitmap img5, Bitmap img6)
         {
-
             this.ImagePaths[0] = img1;
             this.ImagePaths[1] = img2;
             this.ImagePaths[2] = img3;
             this.ImagePaths[3] = img4;
             this.ImagePaths[4] = img5;
             this.ImagePaths[5] = img6;
-
-
         }
 
 
@@ -32,15 +29,5 @@ namespace Story_Cubes
         {
             return ImagePaths[random.Next(0, 6)];
         }
-
-
-
-
-
-
-
-
-
-
     }
 }
